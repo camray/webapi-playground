@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup, Row, Col } from 'reactstrap';
+import { Notes } from './components/notes';
 
-export const PianoScene = ({ playNote, stopNote, setType }) => {
+export const PianoScene = ({ playNote, stopNote, setType, octave }) => {
   return (
     <div className="container">
       <Row>
@@ -18,19 +19,14 @@ export const PianoScene = ({ playNote, stopNote, setType }) => {
       <Row>
         <Col md="12">
           <div className="d-flex">
-            <div className="note white" onMouseDown={() => playNote(261.6)} onMouseUp={stopNote} />
-            <div className="note black" onMouseDown={() => playNote(277.2)} onMouseUp={stopNote} />
-            <div className="note white" onMouseDown={() => playNote(293.7)} onMouseUp={stopNote} />
-            <div className="note black" onMouseDown={() => playNote(311.1)} onMouseUp={stopNote} />
-            <div className="note white" onMouseDown={() => playNote(329.6)} onMouseUp={stopNote} />
-            <div className="note white" onMouseDown={() => playNote(349.2)} onMouseUp={stopNote} />
-            <div className="note black" onMouseDown={() => playNote(370.0)} onMouseUp={stopNote} />
-            <div className="note white" onMouseDown={() => playNote(392.0)} onMouseUp={stopNote} />
-            <div className="note black" onMouseDown={() => playNote(415.3)} onMouseUp={stopNote} />
-            <div className="note white" onMouseDown={() => playNote(440.0)} onMouseUp={stopNote} />
-            <div className="note black" onMouseDown={() => playNote(466.2)} onMouseUp={stopNote} />
-            <div className="note white" onMouseDown={() => playNote(493.9)} onMouseUp={stopNote} />
-            <div className="note white" onMouseDown={() => playNote(523.3)} onMouseUp={stopNote} />
+            {Notes[octave].map(note => (
+              <div
+                className={`note ${note.name.indexOf('#') != -1 ? 'black' : 'white'}`}
+                onMouseDown={() => playNote(note.frequency)}
+                onMouseUp={stopNote}
+                key={note.name}
+              />
+            ))}
           </div>
         </Col>
       </Row>
@@ -42,4 +38,5 @@ PianoScene.propTypes = {
   playNote: PropTypes.func,
   stopNote: PropTypes.func,
   setType: PropTypes.func,
+  octave: PropTypes.number,
 };

@@ -5,7 +5,7 @@ export class PianoSceneContainer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = { octave: 4 };
     this.oscillator = undefined;
   }
 
