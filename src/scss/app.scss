@@ -9,3 +9,16 @@
 
 // Scenes
 @import './scenes/_layout.scss';
+
+.white {
+  border: 1px solid #999;
+  width: 30px;
+  height: 100px;
+  position: relative;
+}
+
+.black {
+  width: 20px;
+  height: 75px;
+  background: #999;
+}

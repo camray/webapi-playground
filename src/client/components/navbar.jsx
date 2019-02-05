@@ -15,7 +15,7 @@ export class AppNav extends React.Component {
     return (
       <Navbar className="main-navbar" light expand="md">
         <NavbarBrand tag={Link} to="/">
-          <img src="/public/img/cryptolist.png" alt="Cryptolist" />
+          Music!
         </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse navbar isOpen={this.state.isOpen}>

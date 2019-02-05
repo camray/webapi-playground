@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { AppNav } from '../components/navbar';
-import { HomeScene } from './home/home-scene';
+import { PianoSceneContainer } from './piano/piano-scene-container';
 
 export const Layout = () => {
   return (
@@ -11,7 +11,7 @@ export const Layout = () => {
           <AppNav />
         </div>
         <div className="container mt-3">
-          <Route exact path="/" component={HomeScene} />
+          <Route exact path="/" component={PianoSceneContainer} />
           {/* other routes go here */}
         </div>
       </div>
