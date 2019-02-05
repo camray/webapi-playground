@@ -16,8 +16,7 @@ export const Layout = () => {
         </div>
       </div>
       <footer className="footer">
-        Fork on <a href="https://github.com/altangent/cryptolist">GitHub</a> | Powered by{' '}
-        <a href="https://blocktap.io">Blocktap</a>
+        Fork on <a href="https://github.com/camray/webapi-playground">GitHub</a>
       </footer>
     </div>
   );
